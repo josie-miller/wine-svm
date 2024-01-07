@@ -1,0 +1,38 @@
+Here is the accuracy output for the first part:
+    Linear SVC: 0.965686 (0.045781)
+    Kernel SVC C=1): 0.982680 (0.026471)
+    Random Forest: 0.971895 (0.037523)
+    Adaboost: 0.938562 (0.052386)
+    
+in the 10-fold cross-validation Analysis, the Linear SVC shows a strong performance with a mean accuracy of ar. 96.57% 
+and a low std of 0.045781, indicating good consistency across the folds. The Kernel SVC with an RBF kernel and C=1.0 achieves 
+a slightly higher mean accuracy of ar. 98.27%, showing even better performance and lower variability with a std of 0.026471. 
+the random forest model demon. robust performance with a mean accuracy of ar. 97.19% and a moderate std of 0.037523, 
+showing consistency. Adaboost, while still performing well, shows a slightly lower mean accuracy of ar. 93.86% and a higher std of 0.052386, 
+suggesting a bit more variability in the performance across folds. these results highlight the effectiveness of the Kernel SVC with C=1.0, 
+then followed by the Linear SVC and Random Forest, in accurately classifying the data in the wine.csv file.
+
+Here is the accuracy outputs for the different C vals:
+    Kernel SVC C=1): 0.982680 (0.026471)
+    Kernel SVC C=10): 0.983007 (0.025972)
+    Kernel SVC C=100): 0.983007 (0.025972)
+
+The kernel SVC with varying values of C shows consistently high performance across dif. regularization strengths. 
+The model with C=1.0 shows a mean accuracy of ar. 98.27% and a std of 0.026471, indicating a high accuracy with pretty low variability across folds. 
+Also, as the regularization strength increases to C=10 and C=100, there is a marginal improvement in the mean accuracy to ar. 98.30%, 
+coupled w/ a slight decrease in std to 0.025972. These results suggest that the regularization strength has minimal impact on model's performance, 
+and the Kernel SVC with C=1.0 already achieves close to -optimal accuracy. The consistency in per. across dif. regularization strengths
+shows a robust and stable model for the wine ds, with diminishing returns seen as C increases beyond 1.0.
+
+Below is a analysis for each model based on its ROC AUC:
+
+- Linear SVC (ROC AUC: 0.9817): preforms very well, demonstrating high discriminative power in differentiating between dif classes.
+- Kernel SVC (RBF Kernel, C=1) (ROC AUC: 0.9888): slightly better performance than the Linear SVC, showing good classification with the RBF kernel 
+and a relatively low regularization par.
+- Kernel SVC (RBF Kernel, C=10) (ROC AUC: 0.9775): slightly lower than C=1, sug. a balance between model complexity and generalization.
+- Kernel SVC (RBF Kernel, C=100) (ROC AUC: 0.9775): quite similar to C=10, indictating that increas. the regularization strength (C) 
+beyond a certain point might not improve performance that much.
+- Random Forest (ROC AUC: 0.9747): preforms well, demonstrating good ensemble-based classification with a depth-limited decision tree.
+= Adaboost (ROC AUC: 0.9649): shows good performance but slightly lower than other models, 
+suggesting that boosting might be sensitive to noise in the data.
+"""
